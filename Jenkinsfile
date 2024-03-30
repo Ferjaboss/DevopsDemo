@@ -1,11 +1,10 @@
 pipeline {
     agent any
-        tools {
+    tools {
         maven 'Maven'
+        jdk 'JDK'
     }
     stages {
-    
-
         stage('Unit Tests') {
             steps {
                 sh 'mvn test'
@@ -17,6 +16,7 @@ pipeline {
                 sh 'mvn integration-test'
             }
         }
+        
         stage('Build Artifact') {
             steps {
                 sh 'mvn package'
