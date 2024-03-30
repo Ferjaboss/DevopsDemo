@@ -4,15 +4,7 @@ pipeline {
         maven 'Maven'
     
     stages {
-        stage('Checkout') {
-            steps {
 
-                checkout([$class: 'GitSCM', 
-                          branches: [[name: '*/main']],
-                          userRemoteConfigs: [[url: 'https://github.com/Ferjaboss/DevopsDemo']]])
-            }
-        }
-        
         stage('Unit Tests') {
             steps {
                 sh 'mvn test'
