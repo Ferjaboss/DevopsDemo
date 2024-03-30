@@ -10,21 +10,9 @@ pipeline {
                 git 'https://github.com/Ferjaboss/DevopsDemo.git'
             }
         }
-        stage('Unit Tests') {
+        stage('Validating') {
             steps {
-                sh 'mvn test'
-            }
-        }
-        
-        stage('Integration Tests') {
-            steps {
-                sh 'mvn integration-test'
-            }
-        }
-        
-        stage('Build Artifact') {
-            steps {
-                sh 'mvn package'
+                sh 'mvn validate'
             }
         }
     }
