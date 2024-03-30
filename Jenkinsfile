@@ -5,13 +5,11 @@ pipeline {
         jdk 'JDK'
     }
     stages {
-        stage('Checkout') {
+          stage('Checkout') {
             steps {
                 git 'https://github.com/Ferjaboss/DevopsDemo.git'
             }
         }
-    }
-    stages {
         stage('Unit Tests') {
             steps {
                 sh 'mvn test'
